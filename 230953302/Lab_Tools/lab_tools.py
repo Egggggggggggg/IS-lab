@@ -31,11 +31,27 @@ def bin_to_ascii(b,debug=False):
     return out
 
 def bitwise_XOR(b1,b2):
-    bin_pad(b1,l=len(b2))
-    bin_pad(b2, l=len(b1))
+    b1=bin_pad(b1,l=len(b2))
+    b2=bin_pad(b2,l=len(b1))
     out=""
     for i in range(len(b1)):
         out+=str(int(b1[i])^int(b2[i]))
+    return out
+
+def bitwise_AND(b1,b2):
+    b1=bin_pad(b1,l=len(b2))
+    b2=bin_pad(b2,l=len(b1))
+    out=""
+    for i in range(len(b1)):
+        out+=str(int(b1[i]) and int(b2[i]))
+    return out
+
+def bitwise_OR(b1,b2):
+    b1=bin_pad(b1,l=len(b2))
+    b2=bin_pad(b2,l=len(b1))
+    out=""
+    for i in range(len(b1)):
+        out+=str(int(b1[i]) or int(b2[i]))
     return out
 
 def circular_shift(b,shift=1):
